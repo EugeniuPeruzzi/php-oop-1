@@ -62,14 +62,6 @@
     $transformers = new Movie('Trasformes 4 - L\'era dell\'estinzione' , $action->genere.'/'.$scienceFiction->genere, 'Inglese', 2014 , 24.99.'$'  , 'Coming Soon 3.9/5' , 16);
     echo $transformers ->titolo.' -- '.$transformers->genere.' -- '.$transformers->lingua.' -- '.$transformers->anno.' -- '.$transformers->prezzo.' -- '.$transformers->raiting.' -- '.$transformers->setPegi($transformers->pegi).'</br>'.'</br>'.'</br>';
     ?>
-<!-- 
-    Oggi pomeriggio ripassate i primi concetti di classe, variabili e metodi d'istanza che abbiamo visto stamattina e create un file index.php in cui:
-    - è definita una classe ‘Movie’ OK
-    => all'interno della classe sono dichiarate delle variabili d'istanza OK
-    => all'interno della classe è definito un costruttore OK
-    => all'interno della classe è definito almeno un metodo OK
-    - vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà. Non potete utilizzare il var_dump per stampare le proprietà dell'oggetto ma le dovete richiamare.
- -->
 
 
 
