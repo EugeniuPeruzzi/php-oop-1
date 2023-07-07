@@ -1,35 +1,72 @@
 <?php 
+    // pegi : 3 7 12 16 18
+   
     class Movie {
         public $titolo;
         public $genere;
         public $lingua;
         public $anno;
         public $prezzo;
-        public $sottotitoli;
         public $raiting;
+        public $pegi;
         
-        function __construct($titolo , $genere , $lingua , $anno , $prezzo , $sottotitoli, $raiting){
+        function __construct($titolo , $genere , $lingua , $anno , $prezzo , $raiting , $pegi){
             $this->titolo = $titolo;
             $this->genere = $genere;
             $this->lingua = $lingua;
             $this->anno = $anno;
             $this->prezzo = $prezzo;
-            $this->sottotitoli = $sottotitoli;
             $this->raiting = $raiting;
+            $this->pegi = isset($pegi);
+        }
+       
+        public function setPegi($pegi){
+            if ($this->pegi >= 18 ){
+                echo 'Visione Adatta a un pubblico adulto';
+            }
+            else if ($this->pegi < 18 && $this->pegi >= 16) {
+                echo 'Visione non consigliata ai minori di 16 anni';
+            }
+            else if ($this->pegi < 16 && $this->pegi >= 12) {
+                echo 'Visione non consigliata ai minori di 12 anni';
+            }
+            else if ($this->pegi < 12 && $this->pegi >= 7) {
+                echo 'Visione non consigliata ai minori di 7 anni';
+            }
+            else if ($this->pegi < 3 && $this->pegi >= 7) {
+                echo 'Visione non consigliata ai minori di 3 anni';
+            }
+        }
+    }
+    
+    //generi
+    class Generi {
+        public $genere;
+        function __construct($genere){
+            $this->genere = $genere;
         }
     }
 
-    $starWars = new Movie('Star Wars - Il risveglio della Forza' , 'Sci-Fi/Action' , 'Inglese', 2015 , 12.50.'$' , false , 'Coming Soon 3.5/5');
-
-    echo $starWars -> prezzo ;
-?>
+    $scienceFiction = new Generi ('Sci/Fi');
+    $action = new Generi ('Action');
+    $familyFriendly = new Generi ('Family Friendly');
+    $comedy = new Generi ('Comedy');
+    // film
+    $starWars = new Movie('Star Wars - Il risveglio della Forza' , $action->genere, 'Inglese', 2015 , 12.50.'$'  , 'Coming Soon 3.5/5' , 12);
+    echo $starWars ->titolo.' -- '.$starWars->genere.' -- '.$starWars->lingua.' -- '.$starWars->anno.' -- '.$starWars->prezzo.' -- '.$starWars->raiting.' -- ';
+    $starWars ->setPegi($starWars -> pegi);
+    
+    $cars = new Movie('Cars - Motori ruggenti' , $familyFriendly->genere.'/'.$comedy->genere, 'Inglese', 2006 , 9.99.'$'  , 'MyMovies 3.1/5' , 3);
+    echo $cars ->titolo.' -- '.$cars->genere.' -- '.$cars->lingua.' -- '.$cars->anno.' -- '.$cars->prezzo.' -- '.$cars->raiting.' -- ';
+    $cars ->setPegi($cars -> pegi);
+    ?>
 <!-- 
     Oggi pomeriggio ripassate i primi concetti di classe, variabili e metodi d'istanza che abbiamo visto stamattina e create un file index.php in cui:
-- è definita una classe ‘Movie’ OK
-=> all'interno della classe sono dichiarate delle variabili d'istanza OK
-=> all'interno della classe è definito un costruttore
-=> all'interno della classe è definito almeno un metodo
-- vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà. Non potete utilizzare il var_dump per stampare le proprietà dell'oggetto ma le dovete richiamare.
+    - è definita una classe ‘Movie’ OK
+    => all'interno della classe sono dichiarate delle variabili d'istanza OK
+    => all'interno della classe è definito un costruttore OK
+    => all'interno della classe è definito almeno un metodo OK
+    - vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà. Non potete utilizzare il var_dump per stampare le proprietà dell'oggetto ma le dovete richiamare.
  -->
 
 
