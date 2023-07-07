@@ -1,13 +1,32 @@
 <?php 
     class Movie {
-        public $nome;
-
+        public $titolo;
+        public $genere;
+        public $lingua;
+        public $anno;
+        public $prezzo;
+        public $sottotitoli;
+        public $raiting;
+        
+        function __construct($titolo , $genere , $lingua , $anno , $prezzo , $sottotitoli, $raiting){
+            $this->titolo = $titolo;
+            $this->genere = $genere;
+            $this->lingua = $lingua;
+            $this->anno = $anno;
+            $this->prezzo = $prezzo;
+            $this->sottotitoli = $sottotitoli;
+            $this->raiting = $raiting;
+        }
     }
+
+    $starWars = new Movie('Star Wars - Il risveglio della Forza' , 'Sci-Fi/Action' , 'Inglese', 2015 , 12.50.'$' , false , 'Coming Soon 3.5/5');
+
+    echo $starWars -> prezzo ;
 ?>
 <!-- 
     Oggi pomeriggio ripassate i primi concetti di classe, variabili e metodi d'istanza che abbiamo visto stamattina e create un file index.php in cui:
-- è definita una classe ‘Movie’
-=> all'interno della classe sono dichiarate delle variabili d'istanza
+- è definita una classe ‘Movie’ OK
+=> all'interno della classe sono dichiarate delle variabili d'istanza OK
 => all'interno della classe è definito un costruttore
 => all'interno della classe è definito almeno un metodo
 - vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà. Non potete utilizzare il var_dump per stampare le proprietà dell'oggetto ma le dovete richiamare.
