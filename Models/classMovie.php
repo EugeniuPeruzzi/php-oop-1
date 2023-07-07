@@ -21,7 +21,7 @@
             $this->raiting = $raiting;
             $this->pegi = $pegi;
         }
-       
+        // funzione che gestisce il pegi, in base al valore dato lui esegue il return e piazza l'immagine 
         public function setPegi($pegi){
             
             if ($this->pegi < 18 && $this->pegi >= 16) {
@@ -38,7 +38,7 @@
             }
         }
     }
-
+    //dichiaro i film che poi vengono passati nell'array 
     $starWars = new Movie('Star Wars - Il risveglio della Forza' , $action->genere, 'Inglese', 2015 , 12.50.'$'  , 'Coming Soon --> 3.5/5' , 12);
     $cars = new Movie('Cars - Motori ruggenti' , $familyFriendly->genere.'/'.$comedy->genere, 'Inglese', 2006 , 9.99.'$'  , 'MyMovies  --> 3.1/5' , 3);
     $transformers = new Movie('Trasformes 4 - L\'era dell\'estinzione' , $action->genere.'/'.$scienceFiction->genere, 'Inglese', 2014 , 24.99.'$'  , 'Coming Soon --> 3.9/5' , 16);

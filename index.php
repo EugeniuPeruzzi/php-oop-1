@@ -1,7 +1,5 @@
 <?php 
-
     include __DIR__.'/db.php';
-    
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +24,9 @@
                 <h1>PhP OOP 1 Film database </h1>
             </div>
             <div class="col d-flex flex-wrap justify-content-center">
+            
             <?php foreach ($array as $index => $movies) { ?>
-
+                <!-- ciclo l'arrai dichiarato in db.php -->
                 <div class="card text-bg-warning border-info border-3 m-3" style="width: 37rem;">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h2 class="card-title"><?php echo $movies -> titolo?></h2>
@@ -49,9 +48,6 @@
             </div>
         </div>
     </div>
-   
-    
-
 </body>
 
 </html>

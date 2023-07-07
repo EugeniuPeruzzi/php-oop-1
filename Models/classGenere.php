@@ -5,8 +5,8 @@ class Generi {
         $this->genere = $genere;
     }
 }
-
-$scienceFiction = new Generi ('Sci/Fi');
+// dichiaro i generi cosicche li richiamo nel new Movies
+$scienceFiction = new Generi ('Sci-Fi');
 $action = new Generi ('Action');
 $familyFriendly = new Generi ('Family Friendly');
 $comedy = new Generi ('Comedy');
